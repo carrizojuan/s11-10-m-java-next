@@ -22,10 +22,8 @@ jobs:
           java-version: '17'
 
       - name: Build with Maven
-        run: |
-          cd /backend
-          mvn clean install
-        working-directory: ./backend
+        run: mvn clean install
+        working-directory: '${{ github.workspace }}/backend'
           
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
